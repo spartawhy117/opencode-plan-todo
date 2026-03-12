@@ -1,6 +1,8 @@
-# Usage
+# Usage / 使用方式
 
-## Recommended workflow
+## English
+
+### Recommended workflow
 
 1. Switch to the `plan-todo` agent.
 2. Run `/init-plan` in a project to normalize planning files and templates.
@@ -9,9 +11,9 @@
 5. Run `/plan-handoff` to generate the execution-facing handoff.
 6. Switch to build mode and implement from `handoff.md`.
 
-## Commands
+### Commands
 
-### `/init-plan`
+#### `/init-plan`
 Creates or normalizes the project planning workflow.
 
 Expected outcomes:
@@ -20,7 +22,7 @@ Expected outcomes:
 - `plan/active/`, `plan/archive/`, and `plan/templates/` exist
 - templates for `plan.json`, `plan.md`, `.plan-original.md`, and `handoff.md` exist
 
-### `/plan-feature <feature-name>`
+#### `/plan-feature <feature-name>`
 Creates or resumes a feature-specific plan.
 
 Expected outcomes:
@@ -28,7 +30,7 @@ Expected outcomes:
 - feature artifacts under `plan/active/<feature>/`
 - a structured todo list with ids, dependencies, and statuses
 
-### `/feature-switch`
+#### `/feature-switch`
 Switches the active feature context inside `plan-todo`.
 
 Behavior:
@@ -36,7 +38,7 @@ Behavior:
 - restores target feature todo and plan state after switching
 - should only be used while `plan-todo` is active
 
-### `/plan-handoff`
+#### `/plan-handoff`
 Creates a minimal execution handoff for build mode.
 
 Behavior:
@@ -44,6 +46,54 @@ Behavior:
 - keeps execution context small
 - focuses on goal, scope, todo summary, order, validation, and blockers
 
-## Runtime language
+## 中文
 
-This workflow is designed so repository files stay in English while the agent can still default to Chinese in user-facing responses.
+### 推荐工作流
+
+1. 切换到 `plan-todo` agent。
+2. 在项目里运行 `/init-plan`，初始化或规范化 planning 目录与模板。
+3. 运行 `/plan-feature <feature-name>` 创建或恢复某个 feature 计划。
+4. 持续澄清范围、比较 `Option Paths`、完善计划，直到用户明确批准执行。
+5. 运行 `/plan-handoff` 生成面向 build 的最小 handoff。
+6. 切换到 build mode，并基于 `handoff.md` 实施。
+
+### 命令说明
+
+#### `/init-plan`
+创建或规范化项目 planning 工作流。
+
+预期结果：
+- 项目 `AGENTS.md` 包含 planning 规则
+- `.opencode/README.md` 存在
+- `plan/active/`、`plan/archive/`、`plan/templates/` 存在
+- `plan.json`、`plan.md`、`.plan-original.md`、`handoff.md` 的模板存在
+
+#### `/plan-feature <feature-name>`
+创建或恢复某个 feature 的专属计划。
+
+预期结果：
+- 生成规范化 feature slug
+- 在 `plan/active/<feature>/` 下生成工件
+- 生成带 `id`、`dependencies`、`status` 的结构化 todo
+
+#### `/feature-switch`
+在 `plan-todo` 中切换当前 active feature。
+
+行为：
+- 切换前保存当前 feature 的 todo 状态
+- 切换后恢复目标 feature 的 todo 与 plan 状态
+- 只应在 `plan-todo` 激活时使用
+
+#### `/plan-handoff`
+为 build mode 生成最小执行 handoff。
+
+行为：
+- 需要 feature plan 已进入 `approved`
+- 尽量压缩执行上下文
+- 聚焦于目标、范围、todo 摘要、执行顺序、验证步骤与阻塞点
+
+## Runtime language / 运行时语言
+
+This workflow keeps repository files in English-first form while still allowing the agent to default to Chinese in user-facing responses.
+
+这套工作流默认让仓库文件以英文优先，但 agent 在面向用户时仍可默认使用中文回复。

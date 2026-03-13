@@ -1,6 +1,7 @@
 ---
 name: repo-release-workflow
-description: Use this skill for repository maintenance requests in this project, especially when the user says “提交” for stage-and-commit behavior or “发版” for version bump, build, release commit, tag, push, and GitHub Actions publishing.
+description: Use this skill for repository maintenance requests in this project, especially when the user says “提交” for stage-and-commit behavior or “发版” for version bump, build, release commit, tag, push, GitHub Actions publishing, and GitHub Release update.
+
 ---
 
 
@@ -34,6 +35,8 @@ Read `docs/repo-release-workflow.md` and `package.json` before taking action. In
    - `npm run repo:release -- --version <x.y.z>`
 5. Remember that the release helper performs version bump, build, release commit, tag creation, branch push, and tag push.
 6. The npm package publish now happens in GitHub Actions after the pushed `v*` tag triggers `.github/workflows/publish-npm.yml`.
+7. The same workflow also creates or updates the GitHub Release for that tag and marks it as `latest`.
+
 
 
 ## Guardrails

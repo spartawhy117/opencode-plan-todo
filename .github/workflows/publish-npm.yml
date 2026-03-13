@@ -7,8 +7,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
+
 
 jobs:
   publish:
@@ -48,3 +49,40 @@ jobs:
 
       - name: Publish to npm via Trusted Publishing
         run: npm publish --provenance
+
+      - name: Create or update GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          NOTES_FILE="$(mktemp)"
+
+          node <<'NODE' > "$NOTES_FILE"
+          const fs = require('node:fs');
+
+          const tag = process.env.GITHUB_REF_NAME;
+          const changelog = fs.readFileSync('CHANGELOG.md', 'utf8');
+          const escape = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const headingPattern = new RegExp(`^## \\[${escape(tag)}\\][^\\n]*$`, 'm');
+          const headingMatch = changelog.match(headingPattern);
+
+          if (!headingMatch || headingMatch.index === undefined) {
+            console.log(`Release ${tag}`);
+            process.exit(0);
+          }
+
+          const startIndex = headingMatch.index + headingMatch[0].length;
+          const rest = changelog.slice(startIndex).replace(/^\r?\n+/, '');
+          const nextHeadingIndex = rest.search(/^## \[/m);
+          const section = (nextHeadingIndex === -1 ? rest : rest.slice(0, nextHeadingIndex)).trim();
+
+          console.log(section || `Release ${tag}`);
+          NODE
+
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --title "$TAG" --notes-file "$NOTES_FILE" --latest
+          else
+            gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --title "$TAG" --notes-file "$NOTES_FILE" --latest
+          fi
+

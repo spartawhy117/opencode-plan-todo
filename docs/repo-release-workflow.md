@@ -128,6 +128,8 @@ npm run repo:release -- --version 0.2.7
 6. `git push`
 7. `git push --tags`
 8. 由 GitHub Actions `.github/workflows/publish-npm.yml` 在 `v*` tag 推送后负责发布到 npm
+9. 同一条 workflow 会为这个 tag 创建或更新 GitHub Release，并将其标记为 `latest`
+
 
 ### 说明
 

@@ -51,7 +51,8 @@ Behavior:
 This repository also tracks a maintainer-only skill named `repo-release-workflow`.
 
 - **Trigger `提交`**: stage and commit current repository changes
-- **Trigger `发版`**: bump version, build, create a release commit, tag, push, and let GitHub Actions publish to npm from the pushed tag
+- **Trigger `发版`**: bump version, build, create a release commit, tag, push, and let GitHub Actions publish to npm and update the GitHub Release from the pushed tag
+
 - **Entrypoints**: `.codebuddy/skills/repo-release-workflow/` and `.opencode/skills/repo-release-workflow/`
 - **Workflow reference**: `docs/repo-release-workflow.md`
 

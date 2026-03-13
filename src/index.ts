@@ -2,13 +2,13 @@ import type { Plugin } from "@opencode-ai/plugin"
 import { deployAssets } from "./deploy.js"
 
 /**
- * opencode-plan-todo Plugin
+ * opencode-enhance-plan Plugin
  *
- * A planning workflow layer for OpenCode that provides:
+ * An enhanced planning workflow plugin for OpenCode that provides:
  * - Automatic deployment of agents/commands/templates to OpenCode config
  * - Event hooks for plan state monitoring and logging
  */
-export const PlanTodoPlugin: Plugin = async ({ client }) => {
+export const EnhancePlanPlugin: Plugin = async ({ client }) => {
   // Deploy assets (agents, commands, templates) to user's OpenCode config directory
   const pkgRoot = new URL("..", import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1")
   const deployResult = await deployAssets({
@@ -20,7 +20,7 @@ export const PlanTodoPlugin: Plugin = async ({ client }) => {
   if (deployResult.deployed > 0) {
     await client.app.log({
       body: {
-        service: "opencode-plan-todo",
+        service: "opencode-enhance-plan",
         level: "info",
         message: `Deployed ${deployResult.deployed} asset(s) to OpenCode config`,
         extra: {
@@ -33,7 +33,7 @@ export const PlanTodoPlugin: Plugin = async ({ client }) => {
   } else {
     await client.app.log({
       body: {
-        service: "opencode-plan-todo",
+        service: "opencode-enhance-plan",
         level: "info",
         message: `All assets up-to-date (${deployResult.skipped} skipped)`,
       },
@@ -47,7 +47,7 @@ export const PlanTodoPlugin: Plugin = async ({ client }) => {
       if (event && event.type === "todo.updated") {
         await client.app.log({
           body: {
-            service: "opencode-plan-todo",
+            service: "opencode-enhance-plan",
             level: "info",
             message: "Todo state updated",
             extra: { event },
@@ -59,4 +59,4 @@ export const PlanTodoPlugin: Plugin = async ({ client }) => {
 }
 
 // Default export for OpenCode plugin loader
-export default PlanTodoPlugin
+export default EnhancePlanPlugin

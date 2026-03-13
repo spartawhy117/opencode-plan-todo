@@ -22,5 +22,5 @@ cp -r "$AGENTS_SOURCE"/. "$AGENTS_TARGET"/
 cp -r "$COMMANDS_SOURCE"/. "$COMMANDS_TARGET"/
 cp -r "$TEMPLATES_SOURCE"/. "$TEMPLATES_TARGET"/
 
-echo "Installed opencode-plan-todo into $TARGET_ROOT"
+echo "Installed opencode-enhance-plan into $TARGET_ROOT"
 echo "Restart OpenCode to load the updated agents and commands."

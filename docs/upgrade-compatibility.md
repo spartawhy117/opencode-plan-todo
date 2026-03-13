@@ -44,8 +44,8 @@ These may need adjustment after OpenCode upgrades:
 If you installed via the plugin method (`opencode.json`):
 - Plugin assets are deployed to `~/.config/opencode/` on each startup
 - The plugin will not overwrite files you have manually modified (unless forced)
-- After upgrading `opencode-plan-todo` to a new version, restart OpenCode to re-deploy updated assets
-- If the `@opencode-ai/plugin` API changes in a breaking way, check for a compatible version of `opencode-plan-todo`
+- After upgrading `opencode-enhance-plan` to a new version, restart OpenCode to re-deploy updated assets
+- If the `@opencode-ai/plugin` API changes in a breaking way, check for a compatible version of `opencode-enhance-plan`
 
 ## 中文
 

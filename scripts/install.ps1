@@ -21,5 +21,5 @@ Copy-Item -Path (Join-Path $agentsSource "*") -Destination $agentsTarget -Recurs
 Copy-Item -Path (Join-Path $commandsSource "*") -Destination $commandsTarget -Recurse -Force
 Copy-Item -Path (Join-Path $templatesSource "*") -Destination $templatesTarget -Recurse -Force
 
-Write-Host "Installed opencode-plan-todo into $TargetRoot"
+Write-Host "Installed opencode-enhance-plan into $TargetRoot"
 Write-Host "Restart OpenCode to load the updated agents and commands."

@@ -1,8 +1,8 @@
-# opencode-plan-todo
+# opencode-enhance-plan
 
 ## English
 
-`opencode-plan-todo` is a planning workflow layer for OpenCode.
+`opencode-enhance-plan` is an enhanced planning workflow plugin for OpenCode.
 
 It does not replace the built-in `plan` mode. Instead, it adds a stronger planning mode for feature work that needs:
 - persistent feature artifacts
@@ -15,11 +15,11 @@ It does not replace the built-in `plan` mode. Instead, it adds a stronger planni
 
 The built-in `plan` mode is still useful for lightweight read-only analysis.
 
-`plan-todo` is intended for heavier feature planning where the default planning experience is often too weak in practice.
+`enhance-plan` is intended for heavier feature planning where the default planning experience is often too weak in practice.
 
-### Built-in `plan` vs `plan-todo`
+### Built-in `plan` vs `enhance-plan`
 
-| Area | Built-in `plan` | `plan-todo` |
+| Area | Built-in `plan` | `enhance-plan` |
 | --- | --- | --- |
 | Primary use | quick analysis | feature planning workflow |
 | Todo persistence | limited | explicit, structured, feature-scoped |
@@ -35,16 +35,17 @@ The built-in `plan` mode is still useful for lightweight read-only analysis.
 - `commands/` - custom slash commands
 - `templates/` - project templates used by `/init-plan`
 - `src/` - TypeScript plugin source (auto-deploys agents/commands/templates)
-- `docs/` - installation, usage, lifecycle, and upgrade notes
+- `docs/` - installation, usage, and upgrade notes
 - `scripts/` - install helpers for Windows (PowerShell) and Linux/macOS (bash)
+- `legacy/` - archived docs superseded by agent definitions
 
 ### Install as OpenCode Plugin (recommended)
 
-Add `opencode-plan-todo` to your `opencode.json`:
+Add `opencode-enhance-plan` to your `opencode.json`:
 
 ```json
 {
-  "plugin": ["opencode-plan-todo"]
+  "plugin": ["opencode-enhance-plan"]
 }
 ```
 
@@ -52,13 +53,13 @@ OpenCode will automatically install and load the plugin on next startup. The plu
 
 ### Install manually
 
-See [`docs/installation.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/installation.md) for manual install options (script or file copy).
+See [`docs/installation.md`](https://github.com/spartawhy117/opencode-enhance-plan/blob/main/docs/installation.md) for manual install options (script or file copy).
 
 ### Core idea
 
 Use the built-in `plan` mode when you want lightweight investigation.
 
-Use `plan-todo` when you want a full planning loop with:
+Use `enhance-plan` when you want a full planning loop with:
 - one active feature at a time
 - persistent plan artifacts under `plan/active/<feature>/`
 - explicit option comparison
@@ -67,10 +68,9 @@ Use `plan-todo` when you want a full planning loop with:
 
 ### Start here
 
-- Installation: [`docs/installation.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/installation.md)
-- Usage: [`docs/usage.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/usage.md)
-- Feature lifecycle: [`docs/feature-lifecycle.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/feature-lifecycle.md)
-- Upgrade compatibility: [`docs/upgrade-compatibility.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/upgrade-compatibility.md)
+- Installation: [`docs/installation.md`](https://github.com/spartawhy117/opencode-enhance-plan/blob/main/docs/installation.md)
+- Usage: [`docs/usage.md`](https://github.com/spartawhy117/opencode-enhance-plan/blob/main/docs/usage.md)
+- Upgrade compatibility: [`docs/upgrade-compatibility.md`](https://github.com/spartawhy117/opencode-enhance-plan/blob/main/docs/upgrade-compatibility.md)
 
 ### Quick path
 
@@ -84,7 +84,7 @@ Use `plan-todo` when you want a full planning loop with:
 
 ## 中文
 
-`opencode-plan-todo` 是一个构建在 OpenCode 之上的 planning workflow layer。
+`opencode-enhance-plan` 是一个构建在 OpenCode 之上的增强规划工作流插件。
 
 它不是用来替代内置 `plan` 模式，而是新增一个更强的规划模式，专门处理这类 feature 任务：
 - 需要持久化 feature 工件
@@ -97,11 +97,11 @@ Use `plan-todo` when you want a full planning loop with:
 
 内置 `plan` 仍然适合做轻量级只读分析。
 
-`plan-todo` 的目标是解决更重的 feature planning 场景：默认 planning 体验在这些场景里通常不够强，尤其是在 todo 持久化、状态管理、feature 切换、handoff 收敛这几个方面。
+`enhance-plan` 的目标是解决更重的 feature planning 场景：默认 planning 体验在这些场景里通常不够强，尤其是在 todo 持久化、状态管理、feature 切换、handoff 收敛这几个方面。
 
-### 内置 `plan` 与 `plan-todo` 的区别
+### 内置 `plan` 与 `enhance-plan` 的区别
 
-| 维度 | 内置 `plan` | `plan-todo` |
+| 维度 | 内置 `plan` | `enhance-plan` |
 | --- | --- | --- |
 | 主要用途 | 快速分析 | feature 级 planning workflow |
 | todo 持久化 | 较弱 | 明确、结构化、按 feature 隔离 |
@@ -117,8 +117,9 @@ Use `plan-todo` when you want a full planning loop with:
 - `commands/` - 自定义斜杠命令
 - `templates/` - `/init-plan` 使用的项目模板
 - `src/` - TypeScript 插件源码（自动部署 agents/commands/templates）
-- `docs/` - 安装、使用、生命周期、升级兼容说明
+- `docs/` - 安装、使用、升级兼容说明
 - `scripts/` - Windows（PowerShell）和 Linux/macOS（bash）安装脚本
+- `legacy/` - 已被 agent 定义取代的归档文档
 
 ### 作为 OpenCode Plugin 安装（推荐）
 
@@ -126,7 +127,7 @@ Use `plan-todo` when you want a full planning loop with:
 
 ```json
 {
-  "plugin": ["opencode-plan-todo"]
+  "plugin": ["opencode-enhance-plan"]
 }
 ```
 
@@ -134,13 +135,13 @@ OpenCode 下次启动时会自动安装并加载插件，自动将 agents、comm
 
 ### 手动安装
 
-参见 [`docs/installation.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/installation.md) 了解手动安装方式（脚本或文件复制）。
+参见 [`docs/installation.md`](https://github.com/spartawhy117/opencode-enhance-plan/blob/main/docs/installation.md) 了解手动安装方式（脚本或文件复制）。
 
 ### 核心思路
 
 如果你只是想做轻量调研，就继续用内置 `plan`。
 
-如果你想要完整的 planning loop，就用 `plan-todo`，它强调：
+如果你想要完整的 planning loop，就用 `enhance-plan`，它强调：
 - 同一时间只维护一个 active feature
 - feature 工件持久化到 `plan/active/<feature>/`
 - 明确的方案比较
@@ -149,10 +150,9 @@ OpenCode 下次启动时会自动安装并加载插件，自动将 agents、comm
 
 ### 从这里开始读
 
-- 安装说明：[`docs/installation.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/installation.md)
-- 使用说明：[`docs/usage.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/usage.md)
-- 生命周期：[`docs/feature-lifecycle.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/feature-lifecycle.md)
-- 升级兼容：[`docs/upgrade-compatibility.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/upgrade-compatibility.md)
+- 安装说明：[`docs/installation.md`](https://github.com/spartawhy117/opencode-enhance-plan/blob/main/docs/installation.md)
+- 使用说明：[`docs/usage.md`](https://github.com/spartawhy117/opencode-enhance-plan/blob/main/docs/usage.md)
+- 升级兼容：[`docs/upgrade-compatibility.md`](https://github.com/spartawhy117/opencode-enhance-plan/blob/main/docs/upgrade-compatibility.md)
 
 ### 最短使用路径
 

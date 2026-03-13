@@ -1,6 +1,6 @@
 # Enhanced Planning Workflow
 
-This project is initialized for the `plan-todo` workflow.
+This project is initialized for the `enhance-plan` workflow.
 
 ## Commands
 

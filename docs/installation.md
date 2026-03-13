@@ -24,7 +24,7 @@ Add the plugin to your `opencode.json`:
 
 ```json
 {
-  "plugin": ["opencode-plan-todo"]
+  "plugin": ["opencode-enhance-plan"]
 }
 ```
 
@@ -92,7 +92,7 @@ After restart:
 
 ```json
 {
-  "plugin": ["opencode-plan-todo"]
+  "plugin": ["opencode-enhance-plan"]
 }
 ```
 

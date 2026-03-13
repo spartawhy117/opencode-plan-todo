@@ -7,6 +7,9 @@ scripts/
 # Documentation (available on GitHub)
 docs/
 
+# Legacy archived docs
+legacy/
+
 # Development files
 .codebuddy/
 .github/

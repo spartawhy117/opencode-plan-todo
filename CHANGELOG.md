@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.2.1] - 2026-03-13
+
+### English
+
+Renamed the project from `opencode-plan-todo` to `opencode-enhance-plan` for better discoverability and clearer value proposition.
+
+Changed:
+- Package name: `opencode-plan-todo` → `opencode-enhance-plan`
+- Repository URL updated to `spartawhy117/opencode-enhance-plan`
+- All internal references, docs, templates, and scripts updated to reflect the new name
+- Plugin description rewritten for clarity: "An enhanced planning workflow plugin for OpenCode"
+- Added `legacy/` directory for archived docs superseded by agent definitions
+- Moved `docs/feature-lifecycle.md` to `legacy/` (content already fully defined in `agents/plan-todo.md`)
+- Cleaned up temporary files (`pr_body.json`, `update_pr.ps1`)
+- Removed accidentally committed `dist/` build artifacts
+
+### 中文
+
+将项目从 `opencode-plan-todo` 重命名为 `opencode-enhance-plan`，以提升可发现性和价值传达。
+
+变更：
+- 包名：`opencode-plan-todo` → `opencode-enhance-plan`
+- 仓库 URL 更新为 `spartawhy117/opencode-enhance-plan`
+- 所有内部引用、文档、模板、脚本均已更新为新名称
+- 插件描述重写："An enhanced planning workflow plugin for OpenCode"
+- 新增 `legacy/` 目录，用于存放被 agent 定义取代的归档文档
+- 将 `docs/feature-lifecycle.md` 移至 `legacy/`（内容已在 `agents/plan-todo.md` 中完整定义）
+- 清理了临时文件（`pr_body.json`、`update_pr.ps1`）
+- 删除了误提交的 `dist/` 编译产物
+
 ## [v0.2.0] - 2026-03-13
 
 ### English

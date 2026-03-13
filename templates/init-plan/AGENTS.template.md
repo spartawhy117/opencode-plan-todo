@@ -1,6 +1,6 @@
 # Project Workflow Rules
 
-This project uses an enhanced planning workflow built around `plan-todo`.
+This project uses an enhanced planning workflow built around `enhance-plan`.
 
 ## Default Workflow
 

@@ -1,5 +1,5 @@
 ---
-description: Read-only feature planning mode with persistent plan artifacts, explicit review, and todo-driven handoff
+description: Enhanced planning mode — persistent plan artifacts, explicit review gates, structured todo state, and feature switching
 mode: primary
 tools:
   read: true

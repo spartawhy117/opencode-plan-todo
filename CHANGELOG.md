@@ -2,7 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.2.6] - 2026-03-13
+
+### English
+
+Added:
+- GitHub Actions workflow `publish-npm-bootstrap.yml` for first npm publish using `NPM_TOKEN`
+- GitHub Actions workflow `publish-npm.yml` for later npm Trusted Publishing releases
+
+Changed:
+- `docs/repo-release-workflow.md` now documents the GitHub-hosted npm publishing path and its relation to local release helpers
+
+### 中文
+
+新增：
+- 新增 GitHub Actions 工作流 `publish-npm-bootstrap.yml`，用于通过 `NPM_TOKEN` 完成首次 npm 发布
+- 新增 GitHub Actions 工作流 `publish-npm.yml`，用于后续基于 npm Trusted Publishing 的发布
+
+变更：
+- `docs/repo-release-workflow.md` 已补充 GitHub 托管 npm 发布路径，以及它与本地 release 辅助脚本之间的关系
+
 ## [v0.2.5] - 2026-03-13
+
 
 
 ### English

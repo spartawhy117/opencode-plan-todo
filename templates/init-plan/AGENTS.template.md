@@ -25,6 +25,12 @@ Completed or inactive feature plans should move to `plan/archive/<feature>/` whe
 - Read `plan.json` or `plan.md` only when additional detail is needed.
 - Avoid loading broad background context when the current feature handoff is sufficient.
 
+## Planning Write Policy
+
+- `enhance-plan` may create or update `AGENTS.md`, `.opencode/README.md`, and files under `plan/` while staying in planning mode.
+- `enhance-plan` must not modify implementation files such as application source, build config, release config, or dependency manifests.
+- Treat planning writes as workflow state management, not as implementation work.
+
 ## Feature Discipline
 
 - Keep one active feature context at a time.

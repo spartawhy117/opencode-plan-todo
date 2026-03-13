@@ -4,8 +4,8 @@ This project is initialized for the `enhance-plan` workflow.
 
 ## Commands
 
-- `/init-plan` - initialize or normalize the project planning workflow
-- `/plan-feature <name>` - create or resume a feature plan
+- `/init-plan` - initialize or normalize the project planning workflow and project-level planning files
+- `/plan-feature <name>` - create or resume a feature plan and persist its planning artifacts
 - `/feature-switch` - switch the active feature while staying in `enhance-plan`
 - `/plan-handoff` - generate a concise handoff for build mode
 
@@ -28,5 +28,7 @@ This project is initialized for the `enhance-plan` workflow.
 ## Notes
 
 - Keep planning focused on one feature at a time.
+- Planning state is persisted to project files under `plan/` rather than kept only in chat or transient todo state.
 - Treat `handoff.md` as the default build context.
+- `enhance-plan` may write planning artifacts and initialization files, but it must not modify implementation files.
 - Keep legacy docs preserved but move new planning into the normalized `plan/` structure.

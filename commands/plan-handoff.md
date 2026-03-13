@@ -10,6 +10,7 @@ Validation rules:
 - do not produce a final handoff if the active feature is not clearly identified
 - do not produce a final handoff if the plan is not at least `approved`
 - do not treat vague encouragement as approval; explicit user confirmation is required
+- you may update `plan/active/<feature>/handoff.md` as a planning draft before approval, but it does not become the final handoff until the feature is `approved`
 
 The handoff must be concise and execution-focused.
 
@@ -22,3 +23,4 @@ Required handoff sections:
 - blockers, caveats, or notable constraints
 
 The handoff should minimize token usage for build mode and should avoid repeating background that is not necessary for execution.
+Do not copy the entire planning history into `handoff.md`; keep it as the smallest useful execution context.

@@ -36,7 +36,18 @@ Project file mapping:
 - `plan-original.template.md` -> project `plan/templates/.plan-original.md`
 - `handoff.template.md` -> project `plan/templates/handoff.md`
 
+Allowed writes for this command:
+- project `AGENTS.md`
+- project `.opencode/README.md`
+- `plan/active/`, `plan/archive/`, and `plan/templates/`
+- the mapped template files under `plan/templates/`
+
 When an existing project already has compatible files, update them carefully instead of blindly overwriting them.
+
+Guardrails:
+- do not modify implementation files or unrelated project configuration
+- only migrate planning or progress docs; do not reorganize product or business documentation
+- if legacy planning docs exist, preserve a traceable source location while normalizing them into the `plan/` structure
 
 Important:
 - stay in planning behavior until the user explicitly asks to switch to build

@@ -4,6 +4,7 @@
   "overview": "One-sentence description of the feature goal.",
   "status": "prepare",
   "hasConfirmed": false,
+  "confirmationState": "pending",
   "parts": [
     "req",
     "tech",
@@ -15,6 +16,12 @@
     "title": "Feature Title"
   },
   "content": "",
+  "lastUpdatedBy": "enhance-plan",
+  "allowedWriteScope": [
+    "AGENTS.md",
+    ".opencode/README.md",
+    "plan/**"
+  ],
   "todolist": [
     {
       "id": "clarify-scope",

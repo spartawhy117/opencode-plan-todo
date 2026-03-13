@@ -10,6 +10,7 @@ It does not replace the built-in `plan` mode. Instead, it adds a stronger planni
 - structured todo state
 - feature switching and resume support
 - minimal build handoff
+- restricted write access for planning artifacts and project-level planning files
 
 ### Why not just use the built-in `plan` mode?
 
@@ -54,6 +55,8 @@ Add `opencode-enhance-plan` to your `opencode.json`:
 
 OpenCode will automatically install and load the plugin on next startup. The plugin deploys agents, commands, and templates to your OpenCode config directory (`~/.config/opencode/`).
 
+The plugin is installed globally through OpenCode, but `enhance-plan` writes planning artifacts into each project that uses `/init-plan` and `/plan-feature`.
+
 ### Core idea
 
 Use the built-in `plan` mode when you want lightweight investigation.
@@ -64,6 +67,7 @@ Use `enhance-plan` when you want a full planning loop with:
 - explicit option comparison
 - explicit user confirmation before build
 - a small execution context through `handoff.md`
+- project-local planning files that can be updated during planning without editing implementation code
 
 ### Start here
 
@@ -149,6 +153,8 @@ Implementation details live in `docs/repo-release-workflow.md` and `scripts/rele
 
 OpenCode 下次启动时会自动安装并加载插件，自动将 agents、commands、templates 部署到 OpenCode 配置目录（`~/.config/opencode/`）。
 
+插件是通过 OpenCode 全局安装的，但 `enhance-plan` 写入的 planning artifacts 会落到每个实际执行 `/init-plan` 与 `/plan-feature` 的项目中。
+
 ### 核心思路
 
 如果你只是想做轻量调研，就继续用内置 `plan`。
@@ -159,6 +165,7 @@ OpenCode 下次启动时会自动安装并加载插件，自动将 agents、comm
 - 明确的方案比较
 - build 前必须有显式确认
 - 通过 `handoff.md` 压缩执行上下文
+- 在规划阶段可受限写入项目级 planning 文件，但不修改实现代码
 
 ### 从这里开始读
 

@@ -30,6 +30,8 @@ Add the plugin to your `opencode.json`:
 
 Restart OpenCode. The plugin will be automatically installed via Bun and will deploy agents, commands, and templates to `~/.config/opencode/`.
 
+The plugin itself is global to your OpenCode setup, but the planning artifacts it manages are project-local. After installation, `enhance-plan` may create or update `AGENTS.md`, `.opencode/README.md`, and files under `plan/` inside the project where you run `/init-plan` or `/plan-feature`.
+
 ### Verify installation
 
 After restart:
@@ -73,6 +75,8 @@ That skill is only for maintaining this repository. It does not change how end u
 ```
 
 重启 OpenCode。插件会通过 Bun 自动安装，并将 agents、commands、templates 部署到 `~/.config/opencode/`。
+
+插件本身是安装到 OpenCode 全局配置里的，但它管理的 planning artifacts 是按项目落地的。安装完成后，`enhance-plan` 可以在你执行 `/init-plan` 或 `/plan-feature` 的项目中创建或更新 `AGENTS.md`、`.opencode/README.md` 与 `plan/` 下的文件。
 
 ### 安装验证
 

@@ -21,8 +21,9 @@ Plugin mode simplifies distribution and installation, but it does **not** remove
 | 1 | `enhance-plan` still appears as a primary agent | Open the agent list in the UI and confirm it is still discoverable |
 | 2 | Commands are still recognized | Trigger any `/` command and confirm it appears and runs normally |
 | 3 | Agent and command frontmatter still behave as expected | Compare headers in `agents/` and `commands/` with the latest OpenCode documentation |
-| 4 | Planning tools such as `todowrite` and `question` still work | Execute a complete planning flow and confirm the tools are callable |
-| 5 | `@opencode-ai/plugin` remains compatible | If the plugin fails to load or deploy, check whether a newer compatible version is required |
+| 4 | Planning tools such as `todowrite`, `question`, and restricted planning writes still work | Execute a complete planning flow and confirm the tools are callable and can update `AGENTS.md`, `.opencode/README.md`, and `plan/**` |
+| 5 | Restricted write boundaries are still respected | Confirm `enhance-plan` can update planning artifacts without modifying implementation files such as source code, manifests, or CI config |
+| 6 | `@opencode-ai/plugin` remains compatible | If the plugin fails to load or deploy, check whether a newer compatible version is required |
 
 ### Plugin-specific notes
 
@@ -30,6 +31,7 @@ Plugin mode simplifies distribution and installation, but it does **not** remove
 - **Files you manually modified will not be overwritten automatically.** This protects local customization, but it can also leave old behavior in place after an upgrade.
 - If an updated file does not seem to take effect, remove the local overridden copy and restart OpenCode to let the plugin deploy it again.
 - After upgrading the plugin version, **restart OpenCode** to trigger re-deployment.
+- After upgrading, re-run a small planning flow to confirm restricted writes still reach project-local planning files.
 
 ### If something breaks
 
@@ -58,8 +60,9 @@ Plugin mode simplifies distribution and installation, but it does **not** remove
 | 1 | `enhance-plan` 是否仍显示为 primary agent | 打开 UI 里的 agent 列表，确认仍然能看到并选择它 |
 | 2 | Commands 是否仍能被识别 | 随便触发一个 `/` 命令，确认可以正常显示并执行 |
 | 3 | Agent 和 command 的 frontmatter 是否仍按预期工作 | 对照最新 OpenCode 文档，检查 `agents/` 和 `commands/` 中的头部字段定义 |
-| 4 | `todowrite`、`question` 等 planning tools 是否仍可用 | 实际跑一遍完整 planning 流程，确认这些工具都还能正常调用 |
-| 5 | `@opencode-ai/plugin` 是否仍兼容 | 如果插件加载失败、部署失败或行为异常，先检查是否需要升级到兼容版本 |
+| 4 | `todowrite`、`question` 以及受限 planning 写入是否仍可用 | 实际跑一遍完整 planning 流程，确认这些工具都还能正常调用，并能更新 `AGENTS.md`、`.opencode/README.md` 与 `plan/**` |
+| 5 | 受限写入边界是否仍然成立 | 确认 `enhance-plan` 只能更新 planning 工件，不会修改源码、依赖清单或 CI 配置 |
+| 6 | `@opencode-ai/plugin` 是否仍兼容 | 如果插件加载失败、部署失败或行为异常，先检查是否需要升级到兼容版本 |
 
 ### 插件模式注意事项
 
@@ -67,6 +70,7 @@ Plugin mode simplifies distribution and installation, but it does **not** remove
 - **你手动改过的文件不会被自动覆盖。** 这能保留本地定制，但也意味着升级后可能继续沿用旧文件，从而看起来像是“升级没生效”。
 - 如果某个更新后的文件似乎没有生效，可以先删除本地那份被覆盖过的副本，再重启 OpenCode，让插件重新部署。
 - 升级插件版本后，需要**重启 OpenCode**，这样才会触发重新部署。
+- 升级后建议最少跑一次 planning 流程，确认项目级 planning 文件仍可被受限更新。
 
 ### 如果升级后出问题
 

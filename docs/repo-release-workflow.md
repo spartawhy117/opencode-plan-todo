@@ -62,7 +62,16 @@ The helper performs the following steps in order:
 - `.codebuddy/plans/` and `.codebuddy/memory/` are treated as local runtime state and should stay ignored.
 - The npm package publish whitelist still targets the plugin payload. These project-level skills exist for repository maintenance only.
 
+### GitHub Actions trusted publishing
+
+This repository also includes `.github/workflows/publish-npm.yml` for GitHub-hosted npm publishing.
+
+- Use it with npm Trusted Publishing after the package has a valid trusted publisher configuration in npm.
+- It supports `workflow_dispatch` for manual runs and `push` on `v*` tags for automatic runs.
+- It does not change the current local helper semantics. The existing `repo:release` script still performs a local `npm publish` unless it is intentionally adjusted later.
+
 ## 中文
+
 
 ### 目的
 

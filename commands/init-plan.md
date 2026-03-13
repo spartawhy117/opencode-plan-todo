@@ -1,6 +1,6 @@
 ---
 description: Initialize the enhanced feature-planning workflow for the current project
-agent: plan-todo
+agent: enhance-plan
 subtask: false
 ---
 
@@ -14,7 +14,7 @@ Goals:
 
 Required outcomes:
 - ensure a project `AGENTS.md` exists and includes the planning workflow conventions
-- create `.opencode/README.md` describing how this project uses `plan-todo`
+- create `.opencode/README.md` describing how this project uses `enhance-plan`
 - create `plan/active/`, `plan/archive/`, and `plan/templates/`
 - create template files for `plan.json`, `plan.md`, `.plan-original.md`, and `handoff.md`
 - if legacy planning docs exist, reorganize them into the agreed structure and keep a traceable legacy location

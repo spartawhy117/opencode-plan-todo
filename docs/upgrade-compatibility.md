@@ -12,7 +12,7 @@ These are expected to remain relatively stable:
 - planning concepts and lifecycle
 - feature artifact structure
 - template files
-- the `plan-todo` planning kernel itself
+- the `enhance-plan` planning kernel itself
 
 ### Potentially changing parts
 
@@ -28,7 +28,7 @@ These may need adjustment after OpenCode upgrades:
 - keep custom files in `~/.config/opencode/` or project `.opencode/`
 - do not modify the OpenCode installation directory
 - after `opencode upgrade`, verify that:
-  - `plan-todo` still appears as a primary agent
+  - `enhance-plan` still appears as a primary agent
   - commands are still recognized
   - command frontmatter still behaves as expected
   - planning tools such as `todowrite` and `question` still work as intended
@@ -59,7 +59,7 @@ If you installed via the plugin method (`opencode.json`):
 - planning 概念与生命周期
 - feature 工件结构
 - 模板文件
-- `plan-todo` 的 planning kernel 本身
+- `enhance-plan` 的 planning kernel 本身
 
 ### 可能变化的部分
 
@@ -75,7 +75,7 @@ OpenCode 升级后，这些点可能需要适配：
 - 自定义文件放在 `~/.config/opencode/` 或项目 `.opencode/`
 - 不要修改 OpenCode 安装目录
 - 执行 `opencode upgrade` 后，检查：
-  - `plan-todo` 是否还显示为 primary agent
+  - `enhance-plan` 是否还显示为 primary agent
   - commands 是否还能识别
   - command frontmatter 是否仍按预期工作
   - `todowrite`、`question` 等 planning 工具是否仍正常

@@ -6,7 +6,7 @@ This project is initialized for the `enhance-plan` workflow.
 
 - `/init-plan` - initialize or normalize the project planning workflow
 - `/plan-feature <name>` - create or resume a feature plan
-- `/feature-switch` - switch the active feature while staying in `plan-todo`
+- `/feature-switch` - switch the active feature while staying in `enhance-plan`
 - `/plan-handoff` - generate a concise handoff for build mode
 
 ## Directory Structure
@@ -19,7 +19,7 @@ This project is initialized for the `enhance-plan` workflow.
 
 ## Recommended Flow
 
-1. Run `/plan-feature <feature>` in `plan-todo` mode.
+1. Run `/plan-feature <feature>` in `enhance-plan` mode.
 2. Clarify requirements, review `Option Paths`, and refine the plan.
 3. Explicitly approve execution when the plan is ready.
 4. Run `/plan-handoff`.

@@ -1,6 +1,6 @@
 ---
 description: Generate a minimal build handoff for the current approved feature plan
-agent: plan-todo
+agent: enhance-plan
 subtask: false
 ---
 

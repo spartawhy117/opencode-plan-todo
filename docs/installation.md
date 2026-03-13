@@ -30,41 +30,10 @@ Add the plugin to your `opencode.json`:
 
 Restart OpenCode. The plugin will be automatically installed via Bun and will deploy agents, commands, and templates to `~/.config/opencode/`.
 
-### Manual install
-
-1. Copy `agents/plan-todo.md` to `~/.config/opencode/agents/`.
-2. Copy all files from `commands/` to `~/.config/opencode/commands/`.
-3. Copy `templates/init-plan/` to `~/.config/opencode/templates/init-plan/`.
-4. Restart OpenCode.
-
-### Script install
-
-On Windows PowerShell:
-
-```powershell
-./scripts/install.ps1
-```
-
-On Linux/macOS:
-
-```bash
-bash scripts/install.sh
-```
-
-You can also choose another target root:
-
-```powershell
-./scripts/install.ps1 -TargetRoot "$HOME/.config/opencode"
-```
-
-```bash
-bash scripts/install.sh ~/.config/opencode
-```
-
 ### Verify installation
 
 After restart:
-- `plan-todo` should appear as a primary agent
+- `enhance-plan` should appear as a primary agent
 - `/init-plan` should be available
 - `/plan-feature`, `/feature-switch`, and `/plan-handoff` should be available
 
@@ -98,41 +67,10 @@ After restart:
 
 重启 OpenCode。插件会通过 Bun 自动安装，并将 agents、commands、templates 部署到 `~/.config/opencode/`。
 
-### 手动安装
-
-1. 将 `agents/plan-todo.md` 复制到 `~/.config/opencode/agents/`。
-2. 将 `commands/` 下全部文件复制到 `~/.config/opencode/commands/`。
-3. 将 `templates/init-plan/` 复制到 `~/.config/opencode/templates/init-plan/`。
-4. 重启 OpenCode。
-
-### 脚本安装
-
-在 Windows PowerShell 下执行：
-
-```powershell
-./scripts/install.ps1
-```
-
-在 Linux/macOS 下执行：
-
-```bash
-bash scripts/install.sh
-```
-
-如果需要指定目标根目录：
-
-```powershell
-./scripts/install.ps1 -TargetRoot "$HOME/.config/opencode"
-```
-
-```bash
-bash scripts/install.sh ~/.config/opencode
-```
-
 ### 安装验证
 
 重启后检查：
-- `plan-todo` 是否出现在主 agent 中
+- `enhance-plan` 是否出现在主 agent 中
 - `/init-plan` 是否可用
 - `/plan-feature`、`/feature-switch`、`/plan-handoff` 是否可用
 

@@ -1,6 +1,6 @@
 ---
 description: Create or resume a feature plan with persistent artifacts and todo state
-agent: plan-todo
+agent: enhance-plan
 subtask: false
 ---
 

@@ -4,7 +4,7 @@ This project uses an enhanced planning workflow built around `enhance-plan`.
 
 ## Default Workflow
 
-- Use `plan-todo` for non-trivial features, cross-module changes, architecture decisions, and work that benefits from explicit review before implementation.
+- Use `enhance-plan` for non-trivial features, cross-module changes, architecture decisions, and work that benefits from explicit review before implementation.
 - Use build mode only after a feature plan has been reviewed and explicitly approved.
 - Keep planning focused on one feature at a time.
 

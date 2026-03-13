@@ -4,7 +4,7 @@
 
 ### Recommended workflow
 
-1. Switch to the `plan-todo` agent.
+1. Switch to the `enhance-plan` agent.
 2. Run `/init-plan` in a project to normalize planning files and templates.
 3. Run `/plan-feature <feature-name>` to create or resume a feature plan.
 4. Clarify scope, review option paths, and refine the plan until the user explicitly approves execution.
@@ -31,12 +31,12 @@ Expected outcomes:
 - a structured todo list with ids, dependencies, and statuses
 
 #### `/feature-switch`
-Switches the active feature context inside `plan-todo`.
+Switches the active feature context inside `enhance-plan`.
 
 Behavior:
 - saves current feature todo state before switching
 - restores target feature todo and plan state after switching
-- should only be used while `plan-todo` is active
+- should only be used while `enhance-plan` is active
 
 #### `/plan-handoff`
 Creates a minimal execution handoff for build mode.
@@ -50,7 +50,7 @@ Behavior:
 
 ### 推荐工作流
 
-1. 切换到 `plan-todo` agent。
+1. 切换到 `enhance-plan` agent。
 2. 在项目里运行 `/init-plan`，初始化或规范化 planning 目录与模板。
 3. 运行 `/plan-feature <feature-name>` 创建或恢复某个 feature 计划。
 4. 持续澄清范围、比较 `Option Paths`、完善计划，直到用户明确批准执行。
@@ -77,12 +77,12 @@ Behavior:
 - 生成带 `id`、`dependencies`、`status` 的结构化 todo
 
 #### `/feature-switch`
-在 `plan-todo` 中切换当前 active feature。
+在 `enhance-plan` 中切换当前 active feature。
 
 行为：
 - 切换前保存当前 feature 的 todo 状态
 - 切换后恢复目标 feature 的 todo 与 plan 状态
-- 只应在 `plan-todo` 激活时使用
+- 只应在 `enhance-plan` 激活时使用
 
 #### `/plan-handoff`
 为 build mode 生成最小执行 handoff。

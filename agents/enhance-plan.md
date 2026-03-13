@@ -21,9 +21,9 @@ permission:
 ---
 
 <system-reminder>
-# Plan-Todo Mode - System Reminder
+# Enhance-Plan Mode - System Reminder
 
-CRITICAL: Plan-Todo mode is ACTIVE. You are in a READ-ONLY planning phase.
+CRITICAL: Enhance-Plan mode is ACTIVE. You are in a READ-ONLY planning phase.
 
 STRICTLY FORBIDDEN:
 - Any file creation, deletion, overwrite, patch, or modification

@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.2.4] - 2026-03-13
+
+### English
+
+Unified runtime agent name and removed legacy installation methods.
+
+Changed:
+- Runtime agent renamed from `plan-todo` to `enhance-plan` for full brand alignment with the package name `opencode-enhance-plan`
+- Agent file renamed: `agents/plan-todo.md` → `agents/enhance-plan.md`
+- All command frontmatter updated: `agent: plan-todo` → `agent: enhance-plan`
+- All command internal references updated to use `enhance-plan`
+- All documentation (`README.md`, `docs/installation.md`, `docs/usage.md`, `docs/upgrade-compatibility.md`) updated to reference `enhance-plan`
+- Templates (`AGENTS.template.md`, `README.template.md`) updated to reference `enhance-plan`
+
+Removed:
+- `docs/installation.md`: Manual install and Script install sections removed — only plugin install via `opencode.json` is now documented
+- `README.md`: Manual install links and `scripts/` directory listing removed
+- `scripts/install.ps1` and `scripts/install.sh` deleted — no longer needed with plugin-based installation
+
+Migration:
+- Existing users should delete the old `~/.config/opencode/agents/plan-todo.md` after upgrading — the plugin will automatically deploy `agents/enhance-plan.md`
+- In the OpenCode UI, switch to `enhance-plan` instead of the old `plan-todo`
+- Projects previously initialized with `/init-plan` can re-run the command to update local references
+
+### 中文
+
+统一运行时 agent 名称，并移除旧的非配置安装方式。
+
+变更：
+- 运行时 agent 从 `plan-todo` 重命名为 `enhance-plan`，与包名 `opencode-enhance-plan` 完全对齐
+- Agent 文件重命名：`agents/plan-todo.md` → `agents/enhance-plan.md`
+- 所有命令 frontmatter 更新：`agent: plan-todo` → `agent: enhance-plan`
+- 所有命令内部引用更新为 `enhance-plan`
+- 所有文档（`README.md`、`docs/installation.md`、`docs/usage.md`、`docs/upgrade-compatibility.md`）更新为引用 `enhance-plan`
+- 模板（`AGENTS.template.md`、`README.template.md`）更新为引用 `enhance-plan`
+
+移除：
+- `docs/installation.md`：删除手动安装和脚本安装章节 — 现在仅记录通过 `opencode.json` 的插件安装方式
+- `README.md`：删除手动安装链接和 `scripts/` 目录说明
+- 删除 `scripts/install.ps1` 和 `scripts/install.sh` — 基于插件安装后不再需要
+
+迁移说明：
+- 升级后请删除旧的 `~/.config/opencode/agents/plan-todo.md` — 插件会自动部署 `agents/enhance-plan.md`
+- 在 OpenCode UI 中切换到 `enhance-plan` 而不是旧的 `plan-todo`
+- 之前用 `/init-plan` 初始化的项目可以重新运行该命令来更新本地引用
+
 ## [v0.2.3] - 2026-03-13
 
 ### English

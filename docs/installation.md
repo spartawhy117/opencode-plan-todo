@@ -30,7 +30,12 @@ Add the plugin to your `opencode.json`:
 
 Restart OpenCode. The plugin will be automatically installed via Bun and will deploy agents, commands, and templates to `~/.config/opencode/`.
 
+`opencode-enhance-plan` treats its own agent, command, and template files as managed runtime assets. When the packaged versions change, those managed files are refreshed by default to keep runtime behavior consistent.
+
 The plugin itself is global to your OpenCode setup, but the planning artifacts it manages are project-local. After installation, `enhance-plan` may create or update `AGENTS.md`, `.opencode/README.md`, and files under `plan/` inside the project where you run `/init-plan` or `/plan-feature`.
+
+Warning:
+- manual edits to `opencode-enhance-plan` managed files under `~/.config/opencode/agents/`, `~/.config/opencode/commands/`, and `~/.config/opencode/templates/` may be overwritten on restart or upgrade
 
 ### Verify installation
 
@@ -76,7 +81,12 @@ That skill is only for maintaining this repository. It does not change how end u
 
 重启 OpenCode。插件会通过 Bun 自动安装，并将 agents、commands、templates 部署到 `~/.config/opencode/`。
 
+`opencode-enhance-plan` 会将自身的 agent、command、template 文件视为受管理运行时资产。当打包版本发生变化时，这些文件会默认刷新，以保持运行时行为一致。
+
 插件本身是安装到 OpenCode 全局配置里的，但它管理的 planning artifacts 是按项目落地的。安装完成后，`enhance-plan` 可以在你执行 `/init-plan` 或 `/plan-feature` 的项目中创建或更新 `AGENTS.md`、`.opencode/README.md` 与 `plan/` 下的文件。
+
+注意：
+- 位于 `~/.config/opencode/agents/`、`~/.config/opencode/commands/`、`~/.config/opencode/templates/` 下由 `opencode-enhance-plan` 管理的文件，在重启或升级时可能覆盖你的手工修改
 
 ### 安装验证
 

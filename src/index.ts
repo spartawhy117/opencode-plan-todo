@@ -14,7 +14,6 @@ export const EnhancePlanPlugin: Plugin = async ({ client }) => {
   const deployResult = await deployAssets({
     sourceDir: pkgRoot,
     targetDir: "",  // will resolve to ~/.config/opencode/ automatically
-    force: false,
   })
 
   if (deployResult.deployed > 0) {
@@ -22,7 +21,7 @@ export const EnhancePlanPlugin: Plugin = async ({ client }) => {
       body: {
         service: "opencode-enhance-plan",
         level: "info",
-        message: `Deployed ${deployResult.deployed} asset(s) to OpenCode config`,
+        message: `Deployed or refreshed ${deployResult.deployed} managed asset(s) in OpenCode config`,
         extra: {
           skipped: deployResult.skipped,
           deployed: deployResult.deployed,
@@ -35,7 +34,7 @@ export const EnhancePlanPlugin: Plugin = async ({ client }) => {
       body: {
         service: "opencode-enhance-plan",
         level: "info",
-        message: `All assets up-to-date (${deployResult.skipped} skipped)`,
+        message: `All managed assets up-to-date (${deployResult.skipped} skipped)`,
       },
     })
   }

@@ -36,7 +36,7 @@ Add `opencode-enhance-plan` to your `opencode.json`:
 }
 ```
 
-Restart OpenCode. The plugin deploys its agents, commands, and templates to `~/.config/opencode/`.
+Restart OpenCode. The plugin deploys its agents, commands, and templates to `~/.config/opencode/` and refreshes those managed runtime files by default when the packaged versions change.
 
 ### Main commands
 
@@ -50,6 +50,7 @@ Restart OpenCode. The plugin deploys its agents, commands, and templates to `~/.
 - it does not replace build mode
 - it does not implement application code while planning
 - it does not run build, install, release, deploy, or migration steps from `enhance-plan`
+- it does not preserve manual edits to the plugin's own managed runtime files during refresh
 
 ### Docs
 
@@ -94,7 +95,7 @@ Restart OpenCode. The plugin deploys its agents, commands, and templates to `~/.
 }
 ```
 
-重启 OpenCode。插件会将 agents、commands、templates 部署到 `~/.config/opencode/`。
+重启 OpenCode。插件会将 agents、commands、templates 部署到 `~/.config/opencode/`，并在打包内容变化时默认刷新这些受管理运行时文件。
 
 ### 主要命令
 
@@ -108,6 +109,7 @@ Restart OpenCode. The plugin deploys its agents, commands, and templates to `~/.
 - 不会替代 build mode
 - 不会在 planning 阶段实现业务代码
 - 不会在 `enhance-plan` 中执行 build、install、release、deploy、migration
+- 不会保留你对插件自管理运行时文件的手工修改
 
 ### 文档
 

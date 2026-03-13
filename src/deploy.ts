@@ -7,7 +7,7 @@ export interface DeployOptions {
   sourceDir: string
   /** Target OpenCode config directory. Defaults to ~/.config/opencode/ */
   targetDir: string
-  /** Force overwrite even if target files exist and differ */
+  /** Optional compatibility flag. Managed plugin assets are overwritten by default. */
   force?: boolean
 }
 
@@ -72,7 +72,7 @@ function filesMatch(pathA: string, pathB: string): boolean {
  * Behavior:
  * - If target file does not exist: copy it
  * - If target file exists and content matches: skip
- * - If target file exists and content differs: skip (unless force=true)
+ * - If target file exists and content differs: overwrite it to refresh managed plugin assets
  */
 export async function deployAssets(options: DeployOptions): Promise<DeployResult> {
   const targetRoot = options.targetDir || getDefaultConfigDir()
@@ -97,17 +97,11 @@ export async function deployAssets(options: DeployOptions): Promise<DeployResult
     for (const relativePath of files) {
       const sourcePath = join(sourceAssetDir, relativePath)
       const targetPath = join(targetAssetDir, relativePath)
+      const targetExists = existsSync(targetPath)
 
-      if (existsSync(targetPath)) {
-        if (filesMatch(sourcePath, targetPath)) {
-          result.skipped++
-          continue
-        }
-        if (!options.force) {
-          result.skipped++
-          result.details.push(`[skip] ${assetDir}/${relativePath} (modified by user, use force to overwrite)`)
-          continue
-        }
+      if (targetExists && filesMatch(sourcePath, targetPath)) {
+        result.skipped++
+        continue
       }
 
       // Ensure parent directory exists
@@ -118,7 +112,7 @@ export async function deployAssets(options: DeployOptions): Promise<DeployResult
       const content = readFileSync(sourcePath)
       writeFileSync(targetPath, content)
       result.deployed++
-      result.details.push(`[deploy] ${assetDir}/${relativePath}`)
+      result.details.push(`[${targetExists ? "refresh" : "deploy"}] ${assetDir}/${relativePath}`)
     }
   }
 

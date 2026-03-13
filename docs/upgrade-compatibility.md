@@ -1,87 +1,32 @@
-# Upgrade Compatibility / 升级兼容性
+# Upgrade Checklist / 升级检查清单
 
-## English
+> This plugin is a workflow layer on top of OpenCode's extension points — not a fork.
+> Plugin mode handles distribution; this checklist covers **what to verify after OpenCode or plugin upgrades**.
 
-### Positioning
+## When to check / 什么时候看
 
-This repository is a workflow layer built on top of OpenCode's extension points. It is not a fork of the OpenCode CLI.
+- After running `opencode upgrade`
+- After bumping `opencode-enhance-plan` to a new version
+- After OpenCode announces breaking changes to agent / command / tool APIs
 
-### Stable parts
+## Post-upgrade checklist / 升级后检查项
 
-These are expected to remain relatively stable:
-- planning concepts and lifecycle
-- feature artifact structure
-- template files
-- the `enhance-plan` planning kernel itself
+| # | Check item | How to verify |
+|---|-----------|---------------|
+| 1 | `enhance-plan` still appears as primary agent | Open agent list in UI |
+| 2 | Commands are recognized | Run any `/` command, confirm it shows up |
+| 3 | Agent & command frontmatter still behave as expected | Check `agents/` and `commands/` headers against new OpenCode docs |
+| 4 | Planning tools (`todowrite`, `question`, etc.) still work | Execute a planning flow end-to-end |
+| 5 | `@opencode-ai/plugin` API is compatible | If plugin fails to load, check for a compatible version |
 
-### Potentially changing parts
+## Plugin-specific notes / 插件模式注意事项
 
-These may need adjustment after OpenCode upgrades:
-- agent frontmatter behavior
-- command frontmatter behavior
-- primary agent discovery in the UI
-- command discovery rules
-- tool permissions and tool naming
+- Assets are deployed to `~/.config/opencode/` on each startup.
+- **Files you manually modified will NOT be overwritten** — this means local edits survive upgrades, but may also hide upstream fixes. If something feels stale, delete the local copy and restart to re-deploy.
+- After upgrading the plugin version, **restart OpenCode** to trigger re-deployment.
 
-### Recommended upgrade policy
+## If something breaks / 出问题怎么办
 
-- keep custom files in `~/.config/opencode/` or project `.opencode/`
-- do not modify the OpenCode installation directory
-- after `opencode upgrade`, verify that:
-  - `enhance-plan` still appears as a primary agent
-  - commands are still recognized
-  - command frontmatter still behaves as expected
-  - planning tools such as `todowrite` and `question` still work as intended
-
-### If something breaks
-
-1. Compare the new OpenCode docs with this repository's assumptions.
-2. Update `agents/` and `commands/` first.
+1. Compare the new OpenCode docs with this repo's assumptions (frontmatter, discovery rules, tool names).
+2. Update `agents/` and `commands/` first — they are the most upstream-sensitive files.
 3. Keep the planning artifact model stable unless OpenCode introduces a clearly better primitive.
-
-### Plugin mode notes
-
-If you installed via the plugin method (`opencode.json`):
-- Plugin assets are deployed to `~/.config/opencode/` on each startup
-- The plugin will not overwrite files you have manually modified (unless forced)
-- After upgrading `opencode-enhance-plan` to a new version, restart OpenCode to re-deploy updated assets
-- If the `@opencode-ai/plugin` API changes in a breaking way, check for a compatible version of `opencode-enhance-plan`
-
-## 中文
-
-### 定位
-
-这个仓库是建立在 OpenCode 官方扩展点之上的 workflow layer，不是 OpenCode CLI 的源码 fork。
-
-### 相对稳定的部分
-
-这些内容通常相对稳定：
-- planning 概念与生命周期
-- feature 工件结构
-- 模板文件
-- `enhance-plan` 的 planning kernel 本身
-
-### 可能变化的部分
-
-OpenCode 升级后，这些点可能需要适配：
-- agent frontmatter 行为
-- command frontmatter 行为
-- UI 中 primary agent 的发现方式
-- command 发现规则
-- tool 权限与命名
-
-### 推荐升级策略
-
-- 自定义文件放在 `~/.config/opencode/` 或项目 `.opencode/`
-- 不要修改 OpenCode 安装目录
-- 执行 `opencode upgrade` 后，检查：
-  - `enhance-plan` 是否还显示为 primary agent
-  - commands 是否还能识别
-  - command frontmatter 是否仍按预期工作
-  - `todowrite`、`question` 等 planning 工具是否仍正常
-
-### 如果升级后出问题
-
-1. 对照新版 OpenCode 文档，检查当前仓库假设是否仍成立。
-2. 优先更新 `agents/` 和 `commands/`。
-3. 除非 OpenCode 提供了明显更好的新原语，否则尽量保持 planning artifact 模型稳定。

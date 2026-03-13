@@ -18,25 +18,48 @@ function fail(message) {
   process.exit(1);
 }
 
-function needsShell(command) {
+function needsCmdWrapper(command) {
   return process.platform === 'win32' && command.toLowerCase().endsWith('.cmd');
 }
 
+function quoteWindowsArg(arg) {
+  if (/^[A-Za-z0-9_./:=+-]+$/.test(arg)) {
+    return arg;
+  }
+
+  return `"${arg.replace(/"/g, '""')}"`;
+}
+
+function resolveCommand(command, args) {
+  if (!needsCmdWrapper(command)) {
+    return { command, args };
+  }
+
+  const commandLine = [command, ...args].map(quoteWindowsArg).join(' ');
+  return {
+    command: 'cmd.exe',
+    args: ['/d', '/s', '/c', commandLine],
+  };
+}
+
 function run(command, args) {
-  execFileSync(command, args, {
+  const resolved = resolveCommand(command, args);
+
+  execFileSync(resolved.command, resolved.args, {
     cwd: repoRoot,
     stdio: 'inherit',
-    shell: needsShell(command),
   });
 }
 
 function capture(command, args) {
-  return execFileSync(command, args, {
+  const resolved = resolveCommand(command, args);
+
+  return execFileSync(resolved.command, resolved.args, {
     cwd: repoRoot,
     encoding: 'utf8',
-    shell: needsShell(command),
   }).trim();
 }
+
 
 
 function ensureGitRepository() {

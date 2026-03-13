@@ -13,3 +13,7 @@ dist/
 
 # Local installation scratch
 local/
+
+# Temp directory contents (keep dir, ignore files)
+temp/*
+!temp/.gitkeep

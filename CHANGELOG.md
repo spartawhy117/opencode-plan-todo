@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.2.3] - 2026-03-13
+
+### English
+
+Project hygiene and PR workflow improvements.
+
+Changed:
+- Added `temp/` directory for reusable PR scripts (excluded from npm package via `files` whitelist and `.npmignore`)
+- Updated `.gitignore` to track `temp/` dir but ignore its contents
+- Cleaned up leftover temporary files from root (`eco_log.txt`, `release_notes.md`)
+- Full code review confirmed plugin implementation matches `@opencode-ai/plugin` v1.2.25 API
+
+### 中文
+
+项目维护和 PR 工作流改进。
+
+变更：
+- 新增 `temp/` 目录用于存放可复用的 PR 脚本（通过 `files` 白名单和 `.npmignore` 排除，不会发布到 npm）
+- 更新 `.gitignore`，跟踪 `temp/` 目录但忽略其中文件
+- 清理根目录遗留临时文件（`eco_log.txt`、`release_notes.md`）
+- 完整代码审查确认插件实现与 `@opencode-ai/plugin` v1.2.25 API 完全匹配
+
 ## [v0.2.2] - 2026-03-13
 
 ### English

@@ -24,4 +24,5 @@ Thumbs.db
 
 # Local artifacts
 local/
+temp/
 node_modules/

@@ -34,8 +34,25 @@ The built-in `plan` mode is still useful for lightweight read-only analysis.
 - `agents/` - custom agent definitions
 - `commands/` - custom slash commands
 - `templates/` - project templates used by `/init-plan`
+- `src/` - TypeScript plugin source (auto-deploys agents/commands/templates)
 - `docs/` - installation, usage, lifecycle, and upgrade notes
-- `scripts/install.ps1` - optional Windows install helper
+- `scripts/` - install helpers for Windows (PowerShell) and Linux/macOS (bash)
+
+### Install as OpenCode Plugin (recommended)
+
+Add `opencode-plan-todo` to your `opencode.json`:
+
+```json
+{
+  "plugin": ["opencode-plan-todo"]
+}
+```
+
+OpenCode will automatically install and load the plugin on next startup. The plugin deploys agents, commands, and templates to your OpenCode config directory (`~/.config/opencode/`).
+
+### Install manually
+
+See [`docs/installation.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/installation.md) for manual install options (script or file copy).
 
 ### Core idea
 
@@ -99,8 +116,25 @@ Use `plan-todo` when you want a full planning loop with:
 - `agents/` - 自定义 agent 定义
 - `commands/` - 自定义斜杠命令
 - `templates/` - `/init-plan` 使用的项目模板
+- `src/` - TypeScript 插件源码（自动部署 agents/commands/templates）
 - `docs/` - 安装、使用、生命周期、升级兼容说明
-- `scripts/install.ps1` - 可选的 Windows 安装脚本
+- `scripts/` - Windows（PowerShell）和 Linux/macOS（bash）安装脚本
+
+### 作为 OpenCode Plugin 安装（推荐）
+
+在 `opencode.json` 中添加：
+
+```json
+{
+  "plugin": ["opencode-plan-todo"]
+}
+```
+
+OpenCode 下次启动时会自动安装并加载插件，自动将 agents、commands、templates 部署到 OpenCode 配置目录（`~/.config/opencode/`）。
+
+### 手动安装
+
+参见 [`docs/installation.md`](https://github.com/spartawhy117/opencode-plan-todo/blob/main/docs/installation.md) 了解手动安装方式（脚本或文件复制）。
 
 ### 核心思路
 

@@ -2,6 +2,54 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.2.0] - 2026-03-13
+
+### English
+
+Transformed the project into an OpenCode npm plugin package.
+
+Added:
+- `package.json` with npm package metadata, build scripts, and plugin entry point
+- `tsconfig.json` for TypeScript compilation (ESNext target, Bun-compatible)
+- `src/index.ts` — Plugin entry point with auto-deploy and event hooks
+- `src/deploy.ts` — Cross-platform asset deployment with idempotent file copy
+- `scripts/install.sh` — Bash install script for Linux/macOS (parity with `install.ps1`)
+- `.npmignore` for clean npm publishing
+
+Changed:
+- `README.md` — Added npm badge, plugin install instructions (English and Chinese)
+- `docs/installation.md` — Added plugin install method as recommended approach
+- `docs/upgrade-compatibility.md` — Added plugin-specific upgrade notes
+- `.gitignore` — Added `dist/` exclusion
+
+Design choices:
+- "Plugin shell + config assets" hybrid architecture: TypeScript plugin handles auto-deploy and hooks, while agents/commands/templates remain as Markdown
+- Idempotent deployment: skip files already present and matching, never overwrite user modifications unless forced
+- Minimal hook footprint: only `event` hook for todo state tracking in v0.2.0
+
+### 中文
+
+将项目转型为 OpenCode npm 插件包。
+
+新增：
+- `package.json`，包含 npm 包元数据、构建脚本和插件入口点
+- `tsconfig.json`，TypeScript 编译配置（ESNext 目标，兼容 Bun）
+- `src/index.ts` — 插件入口，实现自动部署和事件钩子
+- `src/deploy.ts` — 跨平台资产部署，支持幂等文件复制
+- `scripts/install.sh` — Linux/macOS 的 bash 安装脚本（与 `install.ps1` 功能对等）
+- `.npmignore`，用于干净的 npm 发布
+
+变更：
+- `README.md` — 添加 npm badge 和插件安装说明（英中双语）
+- `docs/installation.md` — 将插件安装方式作为推荐方法
+- `docs/upgrade-compatibility.md` — 添加插件模式升级注意事项
+- `.gitignore` — 添加 `dist/` 排除规则
+
+关键设计：
+- "Plugin 壳 + 配置资产" 混合架构：TypeScript 插件负责自动部署和钩子，agents/commands/templates 保持 Markdown 格式
+- 幂等部署：跳过已存在且内容一致的文件，除非强制覆盖，否则不覆盖用户修改
+- 最小化钩子范围：v0.2.0 仅使用 `event` 钩子做 todo 状态追踪
+
 ## [v0.1.1] - 2026-03-13
 
 ### English

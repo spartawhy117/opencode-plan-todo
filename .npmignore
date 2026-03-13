@@ -1,0 +1,24 @@
+# Source files (compiled output in dist/)
+src/
+
+# Scripts (for manual install only)
+scripts/
+
+# Documentation (available on GitHub)
+docs/
+
+# Development files
+.codebuddy/
+.github/
+.gitignore
+.vscode/
+.idea/
+tsconfig.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local artifacts
+local/
+node_modules/

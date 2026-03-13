@@ -1,0 +1,50 @@
+{
+  "name": "opencode-plan-todo",
+  "version": "0.2.0",
+  "description": "A planning workflow layer for OpenCode with persistent plan artifacts, explicit review, structured todo state, and feature switching support",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist/",
+    "agents/",
+    "commands/",
+    "templates/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "planning",
+    "todo",
+    "workflow",
+    "agent",
+    "feature-planning",
+    "plan-management"
+  ],
+  "author": "spartawhy117",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spartawhy117/opencode-plan-todo.git"
+  },
+  "homepage": "https://github.com/spartawhy117/opencode-plan-todo#readme",
+  "bugs": {
+    "url": "https://github.com/spartawhy117/opencode-plan-todo/issues"
+  },
+  "devDependencies": {
+    "@opencode-ai/plugin": "^1.2.25",
+    "@types/node": "^25.5.0",
+    "typescript": "^5.7.0",
+    "zod": "^3.24.0"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

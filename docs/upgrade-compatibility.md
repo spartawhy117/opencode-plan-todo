@@ -39,6 +39,14 @@ These may need adjustment after OpenCode upgrades:
 2. Update `agents/` and `commands/` first.
 3. Keep the planning artifact model stable unless OpenCode introduces a clearly better primitive.
 
+### Plugin mode notes
+
+If you installed via the plugin method (`opencode.json`):
+- Plugin assets are deployed to `~/.config/opencode/` on each startup
+- The plugin will not overwrite files you have manually modified (unless forced)
+- After upgrading `opencode-plan-todo` to a new version, restart OpenCode to re-deploy updated assets
+- If the `@opencode-ai/plugin` API changes in a breaking way, check for a compatible version of `opencode-plan-todo`
+
 ## 中文
 
 ### 定位

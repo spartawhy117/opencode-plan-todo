@@ -5,7 +5,7 @@ This project uses an enhanced planning workflow built around `enhance-plan`.
 ## Default Workflow
 
 - Use `enhance-plan` for non-trivial features, cross-module changes, architecture decisions, and work that benefits from explicit review before implementation.
-- Use build mode only after a feature plan has been reviewed and explicitly approved.
+- After a feature plan has been reviewed and explicitly approved, switch to `enhance-build` for execution. OpenCode's built-in code mode also works but loads more context.
 - Keep planning focused on one feature at a time.
 
 ## Planning Artifacts
@@ -34,9 +34,9 @@ Completed or inactive feature plans should move to `plan/archive/<feature>/` whe
 Long conversations accumulate token overhead from tool outputs and modified file contents injected into context. To keep build sessions efficient:
 
 - Execute todos in small batches as defined in the `Execution Batching` section of `handoff.md`.
-- After completing a batch, prompt the user to commit and push changes before continuing.
-- Commit checkpoints must include the `plan/` directory. Planning artifacts (`plan.json`, `plan.md`, etc.) are part of the working tree and will be injected into context by OpenCode if left uncommitted. Committing them reduces noise in subsequent conversations.
-- After a commit checkpoint, recommend starting a new conversation to reset context, referencing `handoff.md` for the next batch.
+- After completing a batch, prompt the user to commit and push changes — **including the `plan/` directory** — then start a new conversation for the next batch.
+- Planning artifacts (`plan.json`, `plan.md`, etc.) are part of the working tree and will be injected into context by OpenCode if left uncommitted. Committing them reduces noise in subsequent conversations.
+- Starting a new conversation resets accumulated context (tool outputs, modified file contents), keeping each batch session lean.
 - Do not attempt to implement all todos in a single conversation when the feature involves many files or complex changes.
 
 ## Planning Write Policy

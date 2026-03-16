@@ -40,7 +40,7 @@ Warning:
 ### Verify installation
 
 After restart:
-- `enhance-plan` should appear as a primary agent
+- `enhance-plan` and `enhance-build` should appear as primary agents
 - `/init-plan` should be available
 - `/plan-feature`, `/feature-switch`, and `/plan-handoff` should be available
 
@@ -91,7 +91,7 @@ That skill is only for maintaining this repository. It does not change how end u
 ### 安装验证
 
 重启后检查：
-- `enhance-plan` 是否出现在主 agent 中
+- `enhance-plan` 和 `enhance-build` 是否出现在主 agent 中
 - `/init-plan` 是否可用
 - `/plan-feature`、`/feature-switch`、`/plan-handoff` 是否可用
 

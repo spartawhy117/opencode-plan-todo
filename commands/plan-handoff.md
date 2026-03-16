@@ -20,9 +20,9 @@ Required handoff sections:
 - current todo summary
 - execution order
 - execution batching
-- how to execute (must recommend `enhance-build` agent)
 - validation steps
 - blockers, caveats, or notable constraints
+- how to execute (must recommend `enhance-build` agent; placed last so the reader sees scope, risks, and caveats before acting)
 
 Execution batching rules:
 - Group todos into small batches (2-4 items each) based on logical dependency and scope
@@ -35,6 +35,6 @@ The handoff should minimize token usage for build mode and should avoid repeatin
 Do not copy the entire planning history into `handoff.md`; keep it as the smallest useful execution context.
 
 Transition guidance:
-- The handoff must include a `How to Execute` section that recommends switching to the `enhance-build` agent.
-- Explain that `enhance-build` reads only `handoff.md` and `plan.json` at startup, avoiding the broad file exploration that OpenCode's built-in code mode performs.
+- The handoff must end with a `How to Execute` section that recommends switching to the `enhance-build` agent.
+- Explain that `enhance-build` reads only `handoff.md` and `plan.json` at startup, keeping initial context minimal.
 - Mention that the built-in code mode is also supported, but `enhance-build` offers stricter batch discipline and lower token usage.

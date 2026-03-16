@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.1.0] - 2026-03-16
+
+### English
+
+Changed:
+- `docs/context-optimization.md` — **added missing English strategy 5** ("Dedicated Build Agent") to match the Chinese version; both languages now document all five optimization strategies consistently
+- `docs/context-optimization.md` — softened wording about built-in code mode ("may read a wider set of files" instead of "broadly explores the codebase") in both English and Chinese
+- `docs/installation.md` — install verification now checks for both `enhance-plan` and `enhance-build` agents (English and Chinese)
+- `docs/upgrade-compatibility.md` — upgrade steps and engine checklist now include `enhance-build` verification items (English and Chinese)
+- `templates/init-plan/AGENTS.template.md` — "Default Workflow" now recommends `enhance-build` explicitly instead of generic "build mode"; "Build Context Hygiene" consolidated commit + new-conversation prompt into a clearer sequence
+- `templates/init-plan/handoff.template.md` — reordered sections: "Blockers And Caveats" now appears before "How to Execute" so users see risks before acting
+- `commands/plan-handoff.md` — required sections reordered (blockers before how-to-execute); transition guidance wording made more neutral
+
+### 中文
+
+变更：
+- `docs/context-optimization.md` — **补充缺失的英文策略 5**（"专用执行 Agent"），英中文现在统一包含全部五项优化策略
+- `docs/context-optimization.md` — 中文策略 5 措辞改为更中性地描述内建 code 模式
+- `docs/installation.md` — 安装验证现在同时检查 `enhance-plan` 和 `enhance-build`（英中双语）
+- `docs/upgrade-compatibility.md` — 升级步骤和引擎检查清单新增 `enhance-build` 相关检查项（英中双语）
+- `templates/init-plan/AGENTS.template.md` — "Default Workflow" 现在明确推荐 `enhance-build` 而非泛称 "build mode"；"Build Context Hygiene" 将提交和新对话提示合并为更清晰的顺序
+- `templates/init-plan/handoff.template.md` — 调整段落顺序："Blockers And Caveats" 移到 "How to Execute" 之前，用户先看到风险再执行
+- `commands/plan-handoff.md` — 必需段落顺序调整（blockers 在 how-to-execute 之前）；过渡指导措辞更中性
+
 ## [v3.0.0] - 2026-03-16
 
 ### English
